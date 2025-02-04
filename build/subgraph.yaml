@@ -9,7 +9,7 @@ dataSources:
     network: sepolia
     source:
       abi: MONRegistrarController
-      address: "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780"
+      address: "0xD10CC680301933d259c215669F31bEd836E5A72f"
       startBlock: 7609890
     mapping:
       kind: ethereum/events
@@ -31,7 +31,7 @@ dataSources:
     network: sepolia
     source:
       abi: BaseRegistrarImplementation
-      address: "0x7574D8d0eaD67f9687C8E9af041E1846d05A76D2"
+      address: "0xC2b4bAE402d2495Cd012Cb4Cb3C883A9619465EE"
       startBlock: 7609890
     mapping:
       kind: ethereum/events
@@ -55,7 +55,7 @@ dataSources:
     network: sepolia
     source:
       abi: ENSRegistryWithFallback
-      address: "0xF7693D95cE1ff8746B100999E7dC841c91a4cfa1"
+      address: "0x2F97F7FBea0673648eF545d6fBBee567F8B9781c"
       startBlock: 7609890
     mapping:
       kind: ethereum/events

@@ -1,27 +1,27 @@
 {
   "sepolia": {
     "ENSRegistryWithFallback": {
-      "address": "0xF7693D95cE1ff8746B100999E7dC841c91a4cfa1",
+      "address": "0x2F97F7FBea0673648eF545d6fBBee567F8B9781c",
       "startBlock": 7609890
     },
     "ENSRegistryWithFallbackOld": {
-      "address": "0x37ACd9EDD6045C5e5dFEf9012BdDE3dFF6F967f5",
+      "address": "0xCb4137f779E30F65D8636dc0870f6d2338042c54",
       "startBlock": 7609890
     },
     "ReverseRegistrar": {
-      "address": "0xFC606488ae8cbEF7f1DC2304F7c69106572E8381",
+      "address": "0xA118fA6ab3f0Af7eec18533C0c14bF64911aaA55",
       "startBlock": 7609890
     },
     "BaseRegistrarImplementation": {
-      "address": "0x7574D8d0eaD67f9687C8E9af041E1846d05A76D2",
+      "address": "0xC2b4bAE402d2495Cd012Cb4Cb3C883A9619465EE",
       "startBlock": 7609890
     },
     "MONRegistrarController": {
-      "address": "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780",
+      "address": "0xD10CC680301933d259c215669F31bEd836E5A72f",
       "startBlock": 7609890
     },  
     "PublicResolver": {
-      "address": "0xF94323231997e335D413384076487b5948113151",
+      "address": "0x4B28e1df3b3aDeF38Ec4D422BE58b44610ea4f30",
       "startBlock": 7609890
     }
   },
