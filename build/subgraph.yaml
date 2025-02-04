@@ -1,0 +1,74 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+features:
+  - fullTextSearch
+dataSources:
+  - kind: ethereum
+    name: ZKFRegistrarController
+    network: sepolia
+    source:
+      abi: ZKFRegistrarController
+      address: "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780"
+      startBlock: 7609890
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      entities:
+        - Domain
+      abis:
+        - name: ZKFRegistrarController
+          file: ZKFRegistrarController/abis/ZKFRegistrarController.json
+      eventHandlers:
+        - event: NameRegistered(string,indexed bytes32,indexed address,uint256,uint256,uint256)
+          handler: handleNameRegisteredByController
+        - event: NameRenewed(string,indexed bytes32,uint256,uint256)
+          handler: handleNameRenewedByController
+  - kind: ethereum
+    name: BaseRegistrarImplementation
+    network: sepolia
+    source:
+      abi: BaseRegistrarImplementation
+      address: "0x7574D8d0eaD67f9687C8E9af041E1846d05A76D2"
+      startBlock: 7609890
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      entities:
+        - Domain
+      abis:
+        - name: BaseRegistrarImplementation
+          file: BaseRegistrarImplementation/abis/BaseRegistrarImplementation.json
+      eventHandlers:
+        - event: NameRegistered(indexed uint256,indexed address,uint256)
+          handler: handleNameRegisteredByRegistrar
+        - event: NameRenewed(indexed uint256,uint256)
+          handler: handleNameRenewedByRegistrar
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleNameTransferredByRegistrar
+  - kind: ethereum
+    name: ENSRegistryWithFallback
+    network: sepolia
+    source:
+      abi: ENSRegistryWithFallback
+      address: "0xF7693D95cE1ff8746B100999E7dC841c91a4cfa1"
+      startBlock: 7609890
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      entities:
+        - Domain
+      abis:
+        - name: ENSRegistryWithFallback
+          file: ENSRegistryWithFallback/abis/ENSRegistryWithFallback.json
+      eventHandlers:
+        - event: Transfer(indexed bytes32,address)
+          handler: handleTransferByRegistry
+        - event: NewOwner(indexed bytes32,indexed bytes32,address)
+          handler: handleNewOwnerByRegistry

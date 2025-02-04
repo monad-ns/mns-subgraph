@@ -1,0 +1,56 @@
+{
+  "sepolia": {
+    "ENSRegistryWithFallback": {
+      "address": "0xF7693D95cE1ff8746B100999E7dC841c91a4cfa1",
+      "startBlock": 7609890
+    },
+    "ENSRegistryWithFallbackOld": {
+      "address": "0x37ACd9EDD6045C5e5dFEf9012BdDE3dFF6F967f5",
+      "startBlock": 7609890
+    },
+    "ReverseRegistrar": {
+      "address": "0xFC606488ae8cbEF7f1DC2304F7c69106572E8381",
+      "startBlock": 7609890
+    },
+    "BaseRegistrarImplementation": {
+      "address": "0x7574D8d0eaD67f9687C8E9af041E1846d05A76D2",
+      "startBlock": 7609890
+    },
+    "ZKFRegistrarController": {
+      "address": "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780",
+      "startBlock": 7609890
+    },  
+    "PublicResolver": {
+      "address": "0xF94323231997e335D413384076487b5948113151",
+      "startBlock": 7609890
+    }
+  },
+  "mainnet": {
+    "ZKFRegistrarController": {
+      "address": "",
+      "startBlock": 6539500
+    }, 
+    "BaseRegistrarImplementation": {
+      "address": "",
+      "startBlock": 6539500
+    },
+    "ENSRegistryWithFallback": {
+      "address": "",
+      "startBlock": 6539500
+    },
+    "ENSRegistryWithFallbackOld": {
+      "address": "",
+      "startBlock": 6539500
+    },
+    "ReverseRegistrar": {
+      "address": "",
+      "startBlock": 6539500
+    },
+    "PublicResolver": {
+      "address": "",
+      "startBlock": 6539500
+    }
+  }
+}
+
+ 
