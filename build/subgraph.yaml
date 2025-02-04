@@ -5,22 +5,22 @@ features:
   - fullTextSearch
 dataSources:
   - kind: ethereum
-    name: ZKFRegistrarController
+    name: MONRegistrarController
     network: sepolia
     source:
-      abi: ZKFRegistrarController
+      abi: MONRegistrarController
       address: "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780"
       startBlock: 7609890
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      file: MONRegistrarController/MONRegistrarController.wasm
       entities:
         - Domain
       abis:
-        - name: ZKFRegistrarController
-          file: ZKFRegistrarController/abis/ZKFRegistrarController.json
+        - name: MONRegistrarController
+          file: MONRegistrarController/MONRegistrarController.json
       eventHandlers:
         - event: NameRegistered(string,indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handleNameRegisteredByController
@@ -37,12 +37,12 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      file: MONRegistrarController/MONRegistrarController.wasm
       entities:
         - Domain
       abis:
         - name: BaseRegistrarImplementation
-          file: BaseRegistrarImplementation/abis/BaseRegistrarImplementation.json
+          file: BaseRegistrarImplementation/BaseRegistrarImplementation.json
       eventHandlers:
         - event: NameRegistered(indexed uint256,indexed address,uint256)
           handler: handleNameRegisteredByRegistrar
@@ -61,12 +61,12 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ZKFRegistrarController/ZKFRegistrarController.wasm
+      file: MONRegistrarController/MONRegistrarController.wasm
       entities:
         - Domain
       abis:
         - name: ENSRegistryWithFallback
-          file: ENSRegistryWithFallback/abis/ENSRegistryWithFallback.json
+          file: ENSRegistryWithFallback/ENSRegistryWithFallback.json
       eventHandlers:
         - event: Transfer(indexed bytes32,address)
           handler: handleTransferByRegistry

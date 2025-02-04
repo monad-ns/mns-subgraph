@@ -11,7 +11,7 @@ import {
 import { 
   NameRegistered as NameRegisteredByController,
   NameRenewed as NameRenewedByController
-} from "../generated/ZKFRegistrarController/ZKFRegistrarController"
+} from "../generated/MONRegistrarController/MONRegistrarController"
 
 import { 
   NameRegistered as NameRegisteredByRegistrar,
@@ -29,7 +29,7 @@ import { Domain, Account } from "../generated/schema"
 
 import { checkValidLabel, uint256ToByteArray } from "./utils"
  
-const ZKF_NODE = "0x99399a6fdf00305eb312ceca5cb6971d481638860700d269d8e5056c8ccf8af5"
+const MON_NODE = "0x99399a6fdf00305eb312ceca5cb6971d481638860700d269d8e5056c8ccf8af5"
    
 export function handleNameRegisteredByController(event: NameRegisteredByController): void {
     
@@ -50,7 +50,7 @@ export function handleNameRegisteredByController(event: NameRegisteredByControll
   saveAccount(_owner)
 
   let domain = getDomain(hash, blockTimestamp) 
-  domain.name = name + ".zkf";
+  domain.name = name + ".mon";
   domain.labelName = name   
   domain.owner = _owner.id
   domain.registrant = _owner.id
@@ -74,7 +74,7 @@ export function handleNameRenewedByController(event: NameRenewedByController): v
   }
   
   let domain = getDomain(hash, blockTimestamp)
-  domain.name = name + ".zkf";
+  domain.name = name + ".mon";
   domain.labelName = name;
   domain.expiryDate = expires,
   saveDomain(domain, event);
@@ -103,7 +103,7 @@ export function handleNameRegisteredByRegistrar(event: NameRegisteredByRegistrar
   //let name = ens.nameByHash(label.toHexString());
 
   //if (name != null && domain.labelName === null) {
-  //  domain.name = name + ".zkf";
+  //  domain.name = name + ".mon";
   //  domain.labelName = name;
   //}
  
@@ -130,7 +130,7 @@ export function handleNameRenewedByRegistrar(event: NameRenewedByRegistrar): voi
   //let name = ens.nameByHash(label.toHexString());
 
   //if (name != null && domain.labelName === null) {
-  //  domain.name = name + ".zkf";
+  //  domain.name = name + ".mon";
   //  domain.labelName = name;
   //} 
 

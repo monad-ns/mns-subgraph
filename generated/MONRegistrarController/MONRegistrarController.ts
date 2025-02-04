@@ -7,7 +7,7 @@ import {
   Entity,
   Bytes,
   Address,
-  BigInt
+  BigInt,
 } from "@graphprotocol/graph-ts";
 
 export class NameRegistered extends ethereum.Event {
@@ -100,7 +100,7 @@ export class OwnershipTransferred__Params {
   }
 }
 
-export class ZKFRegistrarController__rentPriceResultPriceStruct extends ethereum.Tuple {
+export class MONRegistrarController__rentPriceResultPriceStruct extends ethereum.Tuple {
   get base(): BigInt {
     return this[0].toBigInt();
   }
@@ -110,16 +110,16 @@ export class ZKFRegistrarController__rentPriceResultPriceStruct extends ethereum
   }
 }
 
-export class ZKFRegistrarController extends ethereum.SmartContract {
-  static bind(address: Address): ZKFRegistrarController {
-    return new ZKFRegistrarController("ZKFRegistrarController", address);
+export class MONRegistrarController extends ethereum.SmartContract {
+  static bind(address: Address): MONRegistrarController {
+    return new MONRegistrarController("MONRegistrarController", address);
   }
 
   MIN_REGISTRATION_DURATION(): BigInt {
     let result = super.call(
       "MIN_REGISTRATION_DURATION",
       "MIN_REGISTRATION_DURATION():(uint256)",
-      []
+      [],
     );
 
     return result[0].toBigInt();
@@ -129,7 +129,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "MIN_REGISTRATION_DURATION",
       "MIN_REGISTRATION_DURATION():(uint256)",
-      []
+      [],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -140,7 +140,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   available(name: string): boolean {
     let result = super.call("available", "available(string):(bool)", [
-      ethereum.Value.fromString(name)
+      ethereum.Value.fromString(name),
     ]);
 
     return result[0].toBoolean();
@@ -148,7 +148,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   try_available(name: string): ethereum.CallResult<boolean> {
     let result = super.tryCall("available", "available(string):(bool)", [
-      ethereum.Value.fromString(name)
+      ethereum.Value.fromString(name),
     ]);
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -159,7 +159,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   commitments(param0: Bytes): BigInt {
     let result = super.call("commitments", "commitments(bytes32):(uint256)", [
-      ethereum.Value.fromFixedBytes(param0)
+      ethereum.Value.fromFixedBytes(param0),
     ]);
 
     return result[0].toBigInt();
@@ -169,7 +169,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "commitments",
       "commitments(bytes32):(uint256)",
-      [ethereum.Value.fromFixedBytes(param0)]
+      [ethereum.Value.fromFixedBytes(param0)],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -185,7 +185,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     secret: Bytes,
     resolver: Address,
     data: Array<Bytes>,
-    reverseRecord: boolean
+    reverseRecord: boolean,
   ): Bytes {
     let result = super.call(
       "makeCommitment",
@@ -197,8 +197,8 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
         ethereum.Value.fromFixedBytes(secret),
         ethereum.Value.fromAddress(resolver),
         ethereum.Value.fromBytesArray(data),
-        ethereum.Value.fromBoolean(reverseRecord)
-      ]
+        ethereum.Value.fromBoolean(reverseRecord),
+      ],
     );
 
     return result[0].toBytes();
@@ -211,7 +211,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     secret: Bytes,
     resolver: Address,
     data: Array<Bytes>,
-    reverseRecord: boolean
+    reverseRecord: boolean,
   ): ethereum.CallResult<Bytes> {
     let result = super.tryCall(
       "makeCommitment",
@@ -223,8 +223,8 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
         ethereum.Value.fromFixedBytes(secret),
         ethereum.Value.fromAddress(resolver),
         ethereum.Value.fromBytesArray(data),
-        ethereum.Value.fromBoolean(reverseRecord)
-      ]
+        ethereum.Value.fromBoolean(reverseRecord),
+      ],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -237,7 +237,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.call(
       "maxCommitmentAge",
       "maxCommitmentAge():(uint256)",
-      []
+      [],
     );
 
     return result[0].toBigInt();
@@ -247,7 +247,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "maxCommitmentAge",
       "maxCommitmentAge():(uint256)",
-      []
+      [],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -260,7 +260,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.call(
       "minCommitmentAge",
       "minCommitmentAge():(uint256)",
-      []
+      [],
     );
 
     return result[0].toBigInt();
@@ -270,7 +270,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "minCommitmentAge",
       "minCommitmentAge():(uint256)",
-      []
+      [],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -311,42 +311,42 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   rentPrice(
     name: string,
-    duration: BigInt
-  ): ZKFRegistrarController__rentPriceResultPriceStruct {
+    duration: BigInt,
+  ): MONRegistrarController__rentPriceResultPriceStruct {
     let result = super.call(
       "rentPrice",
       "rentPrice(string,uint256):((uint256,uint256))",
       [
         ethereum.Value.fromString(name),
-        ethereum.Value.fromUnsignedBigInt(duration)
-      ]
+        ethereum.Value.fromUnsignedBigInt(duration),
+      ],
     );
 
-    return changetype<ZKFRegistrarController__rentPriceResultPriceStruct>(
-      result[0].toTuple()
+    return changetype<MONRegistrarController__rentPriceResultPriceStruct>(
+      result[0].toTuple(),
     );
   }
 
   try_rentPrice(
     name: string,
-    duration: BigInt
-  ): ethereum.CallResult<ZKFRegistrarController__rentPriceResultPriceStruct> {
+    duration: BigInt,
+  ): ethereum.CallResult<MONRegistrarController__rentPriceResultPriceStruct> {
     let result = super.tryCall(
       "rentPrice",
       "rentPrice(string,uint256):((uint256,uint256))",
       [
         ethereum.Value.fromString(name),
-        ethereum.Value.fromUnsignedBigInt(duration)
-      ]
+        ethereum.Value.fromUnsignedBigInt(duration),
+      ],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      changetype<ZKFRegistrarController__rentPriceResultPriceStruct>(
-        value[0].toTuple()
-      )
+      changetype<MONRegistrarController__rentPriceResultPriceStruct>(
+        value[0].toTuple(),
+      ),
     );
   }
 
@@ -354,7 +354,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.call(
       "reverseRegistrar",
       "reverseRegistrar():(address)",
-      []
+      [],
     );
 
     return result[0].toAddress();
@@ -364,7 +364,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "reverseRegistrar",
       "reverseRegistrar():(address)",
-      []
+      [],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -377,7 +377,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.call(
       "supportsInterface",
       "supportsInterface(bytes4):(bool)",
-      [ethereum.Value.fromFixedBytes(interfaceID)]
+      [ethereum.Value.fromFixedBytes(interfaceID)],
     );
 
     return result[0].toBoolean();
@@ -387,7 +387,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
     let result = super.tryCall(
       "supportsInterface",
       "supportsInterface(bytes4):(bool)",
-      [ethereum.Value.fromFixedBytes(interfaceID)]
+      [ethereum.Value.fromFixedBytes(interfaceID)],
     );
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -398,7 +398,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   valid(name: string): boolean {
     let result = super.call("valid", "valid(string):(bool)", [
-      ethereum.Value.fromString(name)
+      ethereum.Value.fromString(name),
     ]);
 
     return result[0].toBoolean();
@@ -406,7 +406,7 @@ export class ZKFRegistrarController extends ethereum.SmartContract {
 
   try_valid(name: string): ethereum.CallResult<boolean> {
     let result = super.tryCall("valid", "valid(string):(bool)", [
-      ethereum.Value.fromString(name)
+      ethereum.Value.fromString(name),
     ]);
     if (result.reverted) {
       return new ethereum.CallResult();

@@ -16,7 +16,7 @@
       "address": "0x7574D8d0eaD67f9687C8E9af041E1846d05A76D2",
       "startBlock": 7609890
     },
-    "ZKFRegistrarController": {
+    "MONRegistrarController": {
       "address": "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780",
       "startBlock": 7609890
     },  
@@ -25,30 +25,56 @@
       "startBlock": 7609890
     }
   },
-  "mainnet": {
-    "ZKFRegistrarController": {
-      "address": "",
-      "startBlock": 6539500
-    }, 
-    "BaseRegistrarImplementation": {
-      "address": "",
-      "startBlock": 6539500
-    },
+  "monad-testnet": {
     "ENSRegistryWithFallback": {
       "address": "",
-      "startBlock": 6539500
+      "startBlock": 0
     },
     "ENSRegistryWithFallbackOld": {
       "address": "",
-      "startBlock": 6539500
+      "startBlock": 0
     },
     "ReverseRegistrar": {
       "address": "",
-      "startBlock": 6539500
+      "startBlock": 0
+    },
+    "BaseRegistrarImplementation": {
+      "address": "",
+      "startBlock": 0
+    },
+    "MONRegistrarController": {
+      "address": "",
+      "startBlock": 0
+    },  
+    "PublicResolver": {
+      "address": "",
+      "startBlock": 0
+    }
+  },
+  "mainnet": {
+    "MONRegistrarController": {
+      "address": "",
+      "startBlock": 0
+    }, 
+    "BaseRegistrarImplementation": {
+      "address": "",
+      "startBlock": 0
+    },
+    "ENSRegistryWithFallback": {
+      "address": "",
+      "startBlock": 0
+    },
+    "ENSRegistryWithFallbackOld": {
+      "address": "",
+      "startBlock": 0
+    },
+    "ReverseRegistrar": {
+      "address": "",
+      "startBlock": 0
     },
     "PublicResolver": {
       "address": "",
-      "startBlock": 6539500
+      "startBlock": 0
     }
   }
 }

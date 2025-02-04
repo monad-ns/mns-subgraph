@@ -5,22 +5,22 @@ features:
   - fullTextSearch
 dataSources:
   - kind: ethereum
-    name: ZKFRegistrarController
+    name: MONRegistrarController
     network: sepolia
     source:
-      abi: ZKFRegistrarController
+      abi: MONRegistrarController
       address: "0x40B13E6B8AE6913Aa8B0F2e85D5F922F495b6780"
       startBlock: 7609890
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ./src/zkfRegistrar.ts
+      file: ./src/monRegistrar.ts
       entities:
         - Domain
       abis:
-        - name: ZKFRegistrarController
-          file: ./abis/ZKFRegistrarController.json
+        - name: MONRegistrarController
+          file: ./abis/MONRegistrarController.json
       eventHandlers:
         - event: NameRegistered(string,indexed bytes32,indexed
             address,uint256,uint256,uint256)
@@ -38,7 +38,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ./src/zkfRegistrar.ts
+      file: ./src/monRegistrar.ts
       entities:
         - Domain
       abis:
@@ -62,7 +62,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
-      file: ./src/zkfRegistrar.ts
+      file: ./src/monRegistrar.ts
       entities:
         - Domain
       abis:

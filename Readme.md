@@ -1,5 +1,5 @@
 # fns-subgraph
-ZKFair Domains Subgraph
+Monad Domains Subgraph
 
 ## Install
 to install dependencies, run the following command.
