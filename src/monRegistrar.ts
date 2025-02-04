@@ -29,7 +29,7 @@ import { Domain, Account } from "../generated/schema"
 
 import { checkValidLabel, uint256ToByteArray } from "./utils"
  
-const MON_NODE = "0x99399a6fdf00305eb312ceca5cb6971d481638860700d269d8e5056c8ccf8af5"
+const MON_NODE = "0xc6467acde3662083e12f3fbcf8aef57155a035e49629628eb9453948d1afb379"
    
 export function handleNameRegisteredByController(event: NameRegisteredByController): void {
     
