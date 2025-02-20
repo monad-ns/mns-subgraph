@@ -27,28 +27,28 @@
   },
   "monad-testnet": {
     "ENSRegistryWithFallback": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x6442eC5c3CCDaF112d6B78F9189cD111d516fE1E",
+      "startBlock": 3960000
     },
     "ENSRegistryWithFallbackOld": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x7DCbEf921f341d1C605Fd6c1F0F175Ce13888884",
+      "startBlock": 3960000
     },
     "ReverseRegistrar": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x604bdEE35ebC13ef233f6b4e20613061fDf5C7E5",
+      "startBlock": 3960000
     },
     "BaseRegistrarImplementation": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D",
+      "startBlock": 3960000
     },
     "MONRegistrarController": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x73C5857a7710A7EF3bc32EfA32C8a2ba2827A211",
+      "startBlock": 3960000
     },  
     "PublicResolver": {
-      "address": "",
-      "startBlock": 0
+      "address": "0x6544A8700191578f9e06f9b27bE32dCAe22E72d6",
+      "startBlock": 3960000
     }
   },
   "mainnet": {

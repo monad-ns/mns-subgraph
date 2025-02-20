@@ -6,11 +6,11 @@ features:
 dataSources:
   - kind: ethereum
     name: MONRegistrarController
-    network: sepolia
+    network: monad-testnet
     source:
       abi: MONRegistrarController
-      address: "0xD10CC680301933d259c215669F31bEd836E5A72f"
-      startBlock: 7609890
+      address: "0x73C5857a7710A7EF3bc32EfA32C8a2ba2827A211"
+      startBlock: 3960000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -29,11 +29,11 @@ dataSources:
           handler: handleNameRenewedByController
   - kind: ethereum
     name: BaseRegistrarImplementation
-    network: sepolia
+    network: monad-testnet
     source:
       abi: BaseRegistrarImplementation
-      address: "0xC2b4bAE402d2495Cd012Cb4Cb3C883A9619465EE"
-      startBlock: 7609890
+      address: "0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D"
+      startBlock: 3960000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -53,11 +53,11 @@ dataSources:
           handler: handleNameTransferredByRegistrar
   - kind: ethereum
     name: ENSRegistryWithFallback
-    network: sepolia
+    network: monad-testnet
     source:
       abi: ENSRegistryWithFallback
-      address: "0x2F97F7FBea0673648eF545d6fBBee567F8B9781c"
-      startBlock: 7609890
+      address: "0x6442eC5c3CCDaF112d6B78F9189cD111d516fE1E"
+      startBlock: 3960000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
